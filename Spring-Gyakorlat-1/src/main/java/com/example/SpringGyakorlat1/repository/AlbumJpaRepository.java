@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 public interface AlbumJpaRepository extends JpaRepository<Album, String> {
 
-    //List<Album> findByAlbumName(String name);
+    List<Album> findByBandBandNameContaining(String bandName);
 
 }

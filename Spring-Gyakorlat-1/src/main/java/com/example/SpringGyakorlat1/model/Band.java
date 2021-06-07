@@ -1,6 +1,7 @@
 package com.example.SpringGyakorlat1.model;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,14 +31,17 @@ public class Band {
 
 
     @Column(nullable = false)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     protected String bandGenre;
 
     @Column(nullable = false)
     protected String bandName;
 
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     protected LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "band")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private List<Album> albums;
 
 

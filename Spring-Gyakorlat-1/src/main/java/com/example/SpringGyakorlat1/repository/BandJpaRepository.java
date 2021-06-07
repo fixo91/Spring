@@ -7,6 +7,6 @@ import java.util.List;
 @Repository
 public interface BandJpaRepository extends JpaRepository<Band, String> {
 
-//    List<Band> findByBandNameContainingOrAlbumNameContaining(String name);
+    List<Band> findByBandNameContaining(String bandName);
 
 }

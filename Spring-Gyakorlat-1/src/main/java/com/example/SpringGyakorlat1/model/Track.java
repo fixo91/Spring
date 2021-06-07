@@ -1,5 +1,6 @@
 package com.example.SpringGyakorlat1.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,14 +32,16 @@ public class Track {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private MusicProvider musicProvider;
 
     @Column(nullable = false)
     protected String trackName;
 
     @Column(nullable = false)
-    protected int trackLength;
+    protected String trackLength;
 
     @Column(nullable = false)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     protected String licencePrice;
 }
